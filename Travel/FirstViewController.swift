@@ -14,9 +14,11 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
 
         let afnetworkManager = AFHTTPRequestOperationManager()
-        afnetworkManager.GET("http://www.baidu.com", parameters: nil, success: { (opeation: AFHTTPRequestOperation, <#AnyObject#>) -> Void in
-            <#code#>
-            }, failure: <#T##((AFHTTPRequestOperation, NSError) -> Void)?##((AFHTTPRequestOperation, NSError) -> Void)?##(AFHTTPRequestOperation, NSError) -> Void#>)
+        afnetworkManager.GET("http://www.baidu.com", parameters: nil, success: { (opeation: AFHTTPRequestOperation, anyObj: AnyObject) -> Void in
+                print("success operation")
+            }) { (operation: AFHTTPRequestOperation, error: NSError) -> Void in
+                print("error operation")
+        }
     }
 
     override func didReceiveMemoryWarning() {
